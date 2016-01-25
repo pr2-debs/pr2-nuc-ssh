@@ -8,9 +8,9 @@ then
     sudo sed -i 's:</launch>:\
     <machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>\
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
-    <param name="publish_tf" value="true"/>\
+    \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect_ir_optical_frame kinect2_link 300" />\
+    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
     \
     </launch>:i' /etc/ros/groovy/robot.launch
 fi
@@ -21,9 +21,9 @@ then
     sudo sed -i 's:</launch>:\
     <machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>\
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
-    <param name="publish_tf" value="true"/>\
+    \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect_ir_optical_frame kinect2_link 300" />\
+    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
     \
     </launch>:i' /etc/ros/hydro/robot.launch
 fi
@@ -34,9 +34,9 @@ then
     sudo sed -i 's:</launch>:\
     <machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>\
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
-    <param name="publish_tf" value="true"/>\
+    \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect_ir_optical_frame kinect2_link 300" />\
+    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
     \
     </launch>:i' /etc/ros/indigo/robot.launch
 fi
@@ -44,9 +44,9 @@ fi
 sudo sed -i 's:</launch>:\
     <machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>\
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
-    <param name="publish_tf" value="true"/>\
+    \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect_ir_optical_frame kinect2_link 300" />\
+    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
     \
     </launch>:i' /etc/ros/robot.launch
 
