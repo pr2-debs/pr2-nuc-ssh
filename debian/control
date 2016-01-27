@@ -1,5 +1,5 @@
 Source: pr2-kinect2-config
-Section: config
+Section:config
 Priority: extra
 Maintainer: Rahul Rawat <rrawat@clearpathrobotics.com>
 Build-Depends: debhelper (>= 9), config-package-dev (>= 4.5~)
