@@ -5,37 +5,40 @@ echo 'removing kinect2_bridge launch from upstart file...'
 if [ -d "/etc/ros/groovy" ];
 then
     echo "groovy exists..."
-    sudo sed -i ':<machine name="pr2-head" address="pr2-head" user="pr2-head":d' /etc/ros/groovy/robot.launch
-    sudo sed -i ':<node machine="pr2-head" pkg="kinect2_bridge":d' /etc/ros/groovy/robot.launch
-    sudo sed -i ':<param name="publish_tf" value="true":d' /etc/ros/groovy/robot.launch
-    sudo sed -i ':</node>:d' /etc/ros/groovy/robot.launch
-    sudo sed -i ':<node pkg="tf" type="static_transform_publisher" name="kinect2_transform":d' /etc/ros/groovy/robot.launch
+    sed -e 's/[\/&]/\\&/g'
+    sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/groovy/robot.launch
+    sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/groovy/robot.launch
+    sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/groovy/robot.launch
+    sudo sed -i 's#</node>##i' /etc/ros/groovy/robot.launch
+    sudo sed -i 's#<node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />##i' /etc/ros/groovy/robot.launch
 fi
 
 if [ -d "/etc/ros/hydro" ];
 then
     echo "hydro exists..."
-    sudo sed -i ':<machine name="pr2-head" address="pr2-head" user="pr2-head":d' /etc/ros/hydro/robot.launch
-    sudo sed -i ':<node machine="pr2-head" pkg="kinect2_bridge":d' /etc/ros/hydro/robot.launch
-    sudo sed -i ':<param name="publish_tf" value="true":d' /etc/ros/hydro/robot.launch
-    sudo sed -i ':</node>:d' /etc/ros/hydro/robot.launch
-    sudo sed -i ':<node pkg="tf" type="static_transform_publisher" name="kinect2_transform":d' /etc/ros/hydro/robot.launch
+    sed -e 's/[\/&]/\\&/g'
+    sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/hydro/robot.launch
+    sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/hydro/robot.launch
+    sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/hydro/robot.launch
+    sudo sed -i 's#</node>##i' /etc/ros/hydro/robot.launch
+    sudo sed -i 's#<node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />##i' /etc/ros/hydro/robot.launch
 fi
 
 if [ -d "/etc/ros/indigo" ];
 then
     echo "indigo exists..."
-    sudo sed -i ':<machine name="pr2-head" address="pr2-head" user="pr2-head":d' /etc/ros/indigo/robot.launch
-    sudo sed -i ':<node machine="pr2-head" pkg="kinect2_bridge":d' /etc/ros/indigo/robot.launch
-    sudo sed -i ':<param name="publish_tf" value="true":d' /etc/ros/indigo/robot.launch
-    sudo sed -i ':</node>:d' /etc/ros/indigo/robot.launch
-    sudo sed -i ':<node pkg="tf" type="static_transform_publisher" name="kinect2_transform":d' /etc/ros/indigo/robot.launch
+    sed -e 's/[\/&]/\\&/g'
+    sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/indigo/robot.launch
+    sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/indigo/robot.launch
+    sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/indigo/robot.launch
+    sudo sed -i 's#</node>##i' /etc/ros/indigo/robot.launch
+    sudo sed -i 's#<node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />##i' /etc/ros/indigo/robot.launch
 fi
 
-    sudo sed -i ':<machine name="pr2-head" address="pr2-head" user="pr2-head":d' /etc/ros/robot.launch
-    sudo sed -i ':<node machine="pr2-head" pkg="kinect2_bridge":d' /etc/ros/robot.launch
-    sudo sed -i ':<param name="publish_tf" value="true":d' /etc/ros/robot.launch
-    sudo sed -i ':</node>:d' /etc/ros/robot.launch
-    sudo sed -i ':<node pkg="tf" type="static_transform_publisher" name="kinect2_transform":d' /etc/ros/robot.launch
+sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/robot.launch
+sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/robot.launch
+sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/robot.launch
+sudo sed -i 's#</node>##i' /etc/ros/robot.launch
+sudo sed -i 's#<node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />##i' /etc/ros/robot.launch
 
 echo 'kinect2_bridge removed from upstart'
