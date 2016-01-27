@@ -5,7 +5,6 @@ echo 'removing kinect2_bridge launch from upstart file...'
 if [ -d "/etc/ros/groovy" ];
 then
     echo "groovy exists..."
-    sed -e 's/[\/&]/\\&/g'
     sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/groovy/robot.launch
     sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/groovy/robot.launch
     sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/groovy/robot.launch
@@ -16,7 +15,6 @@ fi
 if [ -d "/etc/ros/hydro" ];
 then
     echo "hydro exists..."
-    sed -e 's/[\/&]/\\&/g'
     sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/hydro/robot.launch
     sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/hydro/robot.launch
     sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/hydro/robot.launch
@@ -27,7 +25,6 @@ fi
 if [ -d "/etc/ros/indigo" ];
 then
     echo "indigo exists..."
-    sed -e 's/[\/&]/\\&/g'
     sudo sed -i 's#<machine name="pr2-head" address="pr2-head" user="pr2-head" password="clearpath" env-loader="/home/pr2-head/kinect_ws/devel/env.sh"/>##i' /etc/ros/indigo/robot.launch
     sudo sed -i 's#<node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">##i' /etc/ros/indigo/robot.launch
     sudo sed -i 's#<param name="publish_tf" value="true"/>##i' /etc/ros/indigo/robot.launch
