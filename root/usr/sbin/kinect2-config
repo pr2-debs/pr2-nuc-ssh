@@ -10,8 +10,6 @@ then
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
     \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
-    \
     </launch>:i' /etc/ros/groovy/robot.launch
 fi
 
@@ -23,8 +21,6 @@ then
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
     \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
-    \
     </launch>:i' /etc/ros/hydro/robot.launch
 fi
 
@@ -36,8 +32,6 @@ then
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
     \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
-    \
     </launch>:i' /etc/ros/indigo/robot.launch
 fi
 
@@ -46,8 +40,6 @@ sudo sed -i 's:</launch>:\
     <node machine="pr2-head" pkg="kinect2_bridge" type="kinect2_bridge" name="kinect2_bridge">\
     \t<param name="publish_tf" value="true"/>\
     </node>\
-    <node pkg="tf" type="static_transform_publisher" name="kinect2_transform" args="0 0 0 0 0 0 head_mount_kinect2_ir_optical_frame kinect2_link 300" />\
-    \
     </launch>:i' /etc/ros/robot.launch
 
 echo 'kinect2_bridge appended to upstart'
