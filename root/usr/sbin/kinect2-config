@@ -36,30 +36,3 @@ then
 fi
 
 echo 'kinect2_bridge appended to upstart'
-
-# Add key to NUC
-echo "Setting up SSH keys to NUC"
-if [[ -e ~/.ssh/id_rsa.pub ]];
-then
-  echo "~/.ssh/id_rsa.pub detected."
-  ssh-copy-id -i ~/.ssh/id_rsa.pub pr2-head@pr2-head || {
-    echo "Error copying key to NUC."
-    exit 1
-  }
-  echo "SSH key added to NUC."
-else
-  read -r -p "~/.ssh/id_rsa.pub not detected. Do you want to set up your SSH keys? [y/N] " response
-  response = ${response,,}
-  if [[ $response =~ ^(yes|y)$ ]];
-  then
-    ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-    ssh-copy-id -i ~/.ssh/id_rsa.pub pr2-head@pr2-head || {
-    echo "Error copying key to NUC."
-    exit 1
-    }
-    echo "RSA key has been generated at ~/.ssh/id_rsa.pub and exported to the NUC."
-  else
-    echo "SSH keys have not been set. If you already have SSH keys generated, please manually export your key to the NUC using ssh-copy-id."
-    exit 1
-  fi
-fi
