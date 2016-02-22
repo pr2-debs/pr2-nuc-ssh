@@ -1,12 +1,13 @@
-Source: pr2-kinect2-config
+Source: pr2-nuc-ssh
 Section: config
 Priority: extra
 Maintainer: Rahul Rawat <rrawat@clearpathrobotics.com>
 Build-Depends: debhelper (>= 9), config-package-dev (>= 4.5~)
 Standards-Version: 3.7.2
 
-Package: pr2-kinect2-config
+Package: pr2-nuc-ssh
 Architecture: any
 Depends: 
-Description: Appends to pr2-c1 upstart file which spawns kinect2_bridge on the Intel Nuc
-Provides: pr2-kinect-config
+Description: Sets up SSH keys on c1 and adds them on the NUC so that password-less SSH to the NUC is possible
+Provides: pr2-nuc-ssh
+Conflicts: pr2-kinect2-config
