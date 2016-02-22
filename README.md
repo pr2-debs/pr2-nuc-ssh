@@ -1,5 +1,5 @@
-# pr2-kinect2-config
-Runs scripts which appends a node to pr2-c1's upstart launch file. This node is spawned on the pr2's Intel Nuc head to run kinect2_bridge
+# pr2-nuc-ssh
+Sets up SSH keys on c1 and adds them on the NUC so that password-less SSH to the NUC is possible
 
 ## Post-installation steps:
 1. Ensure that the computer being used to view information from the PR2 has its /etc/hosts file set to include c1's IP address.

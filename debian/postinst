@@ -1,4 +1,3 @@
 #!/bin/bash
 
-kinect2-config
 nuc-ssh-setup
